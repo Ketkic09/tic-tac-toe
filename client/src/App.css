@@ -1,0 +1,193 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  display: flex;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+}
+
+h1{
+  text-align: center;
+  margin-top: 20px;
+  color: wheat;
+}
+
+h2{
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 30px;
+  color: wheat;
+}
+
+.login {
+  display: flex;
+  border:2px solid rgba(33, 31, 31, 0.5);
+  flex-direction: column;
+  margin: 20px; 
+  margin-top: 70px;
+  background-color:rgba(33, 31, 31, 0.5);
+  border-radius: 10px;
+}
+.signUp {
+  display: flex;
+  border: 2px solid rgba(33, 31, 31, 0.5);
+  flex-direction: column;
+  margin: 20px;
+  background-color:rgba(33, 31, 31, 0.5);
+  border-radius: 10px;
+}
+
+.join{
+  display: flex;
+  border:2px solid rgba(33, 31, 31, 0.5);
+  flex-direction: column;
+  width: 500px;
+  margin: 20px; 
+  margin-top: 70px;
+  background-color:rgba(33, 31, 31, 0.5);
+  border-radius: 10px;
+}
+
+.join h4{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  font-size: 30px;
+  color: wheat;
+}
+
+.join p{
+  color: #ccc;
+  font-size: small;
+}
+.join input,
+.login input,
+.signUp input {
+  margin: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 0;
+  border-bottom: 2px solid grey;
+  outline: 0;
+  background: transparent;
+  width: 350px;
+  height: 30px;
+  color: wheat;
+  caret-color: wheat; 
+}
+.join button,
+.login button,
+.signUp button {
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 350px;
+  height: 40px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+}
+
+.logout button{
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+}
+
+.logout button:hover,
+.login button:hover,
+.signUp button:hover{
+  background-color: white;
+  color: #121212;
+}
+
+.login label,
+.signUp label {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 15px;
+  color: white;
+}
+
+
+.SignUp p{
+  margin-left: 20px;
+  margin-top: none;
+  color: #ccc;
+  font-size: small;
+}
+
+.board {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+}
+
+.square {
+  flex: 33%;
+  height: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.square:active {
+  background-color: lightgray;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 30px;
+  color: wheat;
+}
+
+.joinGame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+} 
+.joinGame input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 220px;
+  height: 30px;
+}
+.joinGame button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 220px;
+  height: 51px;
+  cursor: pointer;
+}
