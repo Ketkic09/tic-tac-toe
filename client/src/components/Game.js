@@ -3,12 +3,13 @@ import Board from './Board';
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Column from "react-bootstrap/Col"
-import Button from "react-bootstrap/Button"
+
+
+
 
 function Game({channel,setChannel}) {
   const [playersJoined,setPlayersJoined] = useState(channel.state.watcher_count === 2)
   const [result,setResult] = useState({winner:"na",state:"na"})
-
   channel.on("user.watching.start",(event)=>{
     setPlayersJoined(event.watcher_count === 2)
   })
@@ -19,16 +20,16 @@ function Game({channel,setChannel}) {
       <Container>
         <Row >
         <Column >
-        <button className='btn btn-outline-danger btn-sm'
-              onClick={async () => {
-              await channel.stopWatching();
-              setChannel(null);
-            }}
-          >
-            {" "} 
-            Leave Game
-          </button>
-          </Column>
+          <button className='btn btn-outline-danger btn-sm'
+                onClick={async () => {
+                await channel.stopWatching();
+                setChannel(null);
+              }}
+            >
+              {" "} 
+              Leave Game
+            </button>
+        </Column>
         
         <Column>
           <br></br> 
@@ -37,7 +38,7 @@ function Game({channel,setChannel}) {
           {result.state==="tie" && <h4>No one Won</h4>}  
 
            <Board result={result} setResult={setResult} />
-            
+
         </Column>
           
           </Row>

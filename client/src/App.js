@@ -1,8 +1,7 @@
 // eslint-disable-next-line
-import{BrowserRouter as Router,Routes,Route} from "react-router-dom"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import SignUp from "./components/SignUp";
 import {StreamChat} from 'stream-chat';
 import {Chat} from 'stream-chat-react';
 import Cookies from "universal-cookie";
@@ -12,10 +11,11 @@ import JoinGame from "./components/JoinGame";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Column from "react-bootstrap/Col"
-import Col from "react-bootstrap/Col";
+
 
 function App() {
   const api_key = process.env.REACT_APP_API_KEY
+  const api_secret = process.env.REACT_APP_API_SECRET
   const cookies = new Cookies()
   const token = cookies.get("token")
   const client = StreamChat.getInstance(api_key)
@@ -39,6 +39,7 @@ function App() {
       fname: cookies.get("name"),
       hashedPswd: cookies.get("hashedPswd")
     },token).then((user)=>{
+      console.log(user)
       setIsAuth(true)
     })
   }
@@ -74,9 +75,7 @@ function App() {
           </Column>
         </Row> 
           <Row>
-            <Column>
-            <SignUp setIsAuth={setIsAuth}/>
-            </Column>
+            
             <Column>
             <Login setIsAuth={setIsAuth} />
             </Column>

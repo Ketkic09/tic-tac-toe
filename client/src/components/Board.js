@@ -52,6 +52,7 @@ function Board({result,setResult}) {
             })
             // if winning pattern found alert 
             if(patternFound){
+                setTurn("Won")
                 setResult({winner:board[currentPattern[0]],state:"won"})
                 
             }

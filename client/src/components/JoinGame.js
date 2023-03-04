@@ -3,9 +3,8 @@ import {useChatContext,Channel} from 'stream-chat-react';
 import Game from './Game';
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import Column from "react-bootstrap/Col"
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
+
 
 function JoinGame() {
   const [rivalUsername,setRivalUsername] = useState("")
@@ -19,6 +18,7 @@ function JoinGame() {
       alert("user not registered")
       return
     }
+    console.log(response.users)
     const newChannel = await client.channel("messaging",{
       members: [client.userID,response.users[0].id]  //creating channel between two user and rival
     })
@@ -31,6 +31,7 @@ function JoinGame() {
           <Game channel={channel} setChannel={setChannel} />
         </Channel>) :
       (<>
+   
       <Container className="join">
         <Row>
           <h4>Create Game</h4>

@@ -5,6 +5,7 @@
 /.pnp
 /.env
 .pnp.js
+SignUp.js
 
 # testing
 /coverage

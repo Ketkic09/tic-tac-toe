@@ -3,16 +3,15 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie'
 
 function Login({setIsAuth}) {
-    const [user,setUser] = useState({username:'',password:''})
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("")
     const cookies = new Cookies()
-    const onChange = (e)=>{
-        setUser({...user,[e.target.name]:e.target.value})
-    }
+    
     const handleLogin = (e)=>{
       
         e.preventDefault()
-       // console.log({user})
-        Axios.post("http://localhost:5000/signup",user).then(res=>{
+       
+        Axios.post("http://localhost:5000/signup",{username,password}).then(res=>{
             const {token,userId,name,username} = res.data
             cookies.set("token",token)
             cookies.set("userId",userId)
@@ -21,19 +20,23 @@ function Login({setIsAuth}) {
             setIsAuth(true)
         })
         
-        setUser({username:'',password:''})
+       // setUser({username:'',password:''})
 
     }
   return (
     <div className='login'>
-        <h2>Login</h2>
+        <h2>Register</h2>
             <label>Username</label>
-            <input type="text" placeholder='Enter username' name='username' value={user.username} onChange={onChange} minLength={2} required />
+            <input type="text" placeholder='Enter username' name='username'  onChange={(event) => {
+          setUsername(event.target.value);
+        }} minLength={2} required />
             <label>Password</label>
-            <input type="password" placeholder='Enter password' name='password' value={user.password} onChange={onChange} minLength={8} required />
+            <input type="password" placeholder='Enter password' name='password' onChange={(event) => {
+          setPassword(event.target.value);
+        }} required />
            
             <br />
-            <button onClick={handleLogin}>Log in</button>
+            <button onClick={handleLogin}>Register</button>
         
     </div>
     

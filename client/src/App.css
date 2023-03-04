@@ -1,6 +1,6 @@
 .App {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   justify-content: center;
   align-items: center;
   background-color: #121212;
@@ -10,7 +10,7 @@
 body {
   padding: 0;
   margin: 0;
-
+  background-color: #121212;
 }
 
 h1{
@@ -32,10 +32,11 @@ h2{
   display: flex;
   border:2px solid rgba(33, 31, 31, 0.5);
   flex-direction: column;
-  margin: 20px; 
+  margin: auto; 
   margin-top: 70px;
   background-color:rgba(33, 31, 31, 0.5);
   border-radius: 10px;
+  width: 500px;
 }
 .signUp {
   display: flex;
@@ -44,6 +45,7 @@ h2{
   margin: 20px;
   background-color:rgba(33, 31, 31, 0.5);
   border-radius: 10px;
+  width: inherit;
 }
 
 .join{
@@ -107,10 +109,11 @@ h2{
   color: white;
 }
 
+
 .logout button:hover,
 .login button:hover,
 .signUp button:hover{
-  background-color: white;
+  background-color: wheat;
   color: #121212;
 }
 
@@ -126,9 +129,9 @@ h2{
 
 
 .SignUp p{
-  margin-left: 20px;
+  margin-left: inherit;
   margin-top: none;
-  color: #ccc;
+  color: wheat;
   font-size: small;
 }
 
@@ -191,3 +194,4 @@ h4 {
   height: 51px;
   cursor: pointer;
 }
+

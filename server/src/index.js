@@ -13,6 +13,7 @@ dotenv.config()
 const api_key = process.env.API_KEY
 const api_secret = process.env.API_SECRET
 const serverClient = StreamChat.getInstance(api_key,api_secret)
+const PORT = process.env.PORT || 5000
 
 // API [POST] for /signup
 app.post("/signup", async(req,res)=>{
@@ -30,30 +31,13 @@ app.post("/signup", async(req,res)=>{
     }
 })
 
-app.post("/login",async(req,res)=>{
-    try{
-        const {username,password} = req.body
-        const users = await serverClient.queryUsers({name:username})  //returns all users matching the username entered
-        if(users.length === 0) {
-            return res.json({message:"User not found"})
-        }
-        const token = serverClient.createToken(users[0].id)
-        const pwsdCheck = await bcrypt.compare(password,users[0].hashedPswd)
-        if (pwsdCheck){
-            res.json({
-                token,
-                userId: users[0].id,
-                name: users[0].name,
-                username:username
-            })
-        }
-    }catch(error){
-        res.json(error)
-    }
+
+
+app.use("/",(req,res)=>{
+    res.send("server is running here")
 })
 
-
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     console.log("Server runing on port 5000")
 })
 
